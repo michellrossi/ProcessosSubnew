@@ -1,20 +1,14 @@
-// src/firebase.ts
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore"; // Se for usar o banco de dados Firestore
-import { getAuth } from "firebase/auth";           // Se for usar autenticação
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyALm6bbE9zBlxrP76mYimuZuJsY2hycdD0",
-  authDomain: "controle-de-processos-e21e5.firebaseapp.com",
-  projectId: "controle-de-processos-e21e5",
-  storageBucket: "controle-de-processos-e21e5.firebasestorage.app",
-  messagingSenderId: "236356647253",
-  appId: "1:236356647253:web:a8b46bdf70499be2d7d7dc"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
-// Inicializa o Firebase
 const app = initializeApp(firebaseConfig);
-
-// Exporta as instâncias para usar no projeto
 export const db = getFirestore(app);
-export const auth = getAuth(app);
