@@ -13,7 +13,7 @@ import {
 import { db } from '../firebase'; // Certifique-se de que o arquivo firebase.ts exporta 'db'
 import { Processo } from '../types';
 
-const COLLECTION_NAME = 'processos_administrativos';
+const COLLECTION_NAME = 'controle-de-processos';
 
 export const useProcessos = () => {
   const [processos, setProcessos] = useState<Processo[]>([]);
